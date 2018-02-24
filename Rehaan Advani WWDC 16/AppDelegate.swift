@@ -7,16 +7,67 @@
 //
 
 import UIKit
+import MessageUI
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        self.window?.rootViewController = UINavigationController(rootViewController: RAIntroductionViewController())
+        
+        let pageControl = UIPageControl.appearance()
+        //pageControl.pageIndicatorTintColor = UIColor.lightGrayColor()
+        //pageControl.currentPageIndicatorTintColor = UIColor.blackColor()
+        pageControl.pageIndicatorTintColor = UIColor(red: 44/255, green: 62/255, blue: 80/255, alpha: 1.0)
+        pageControl.currentPageIndicatorTintColor = UIColor.whiteColor()
+        pageControl.backgroundColor = UIColor.clearColor()
+        
+        
+        
+        if let font = UIFont(name: "SFUIText-Light", size: 18/*17*/) {
+            UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: font], forState: .Normal)
+        }
+        
+        //UINavigationBar.appearance().barTintColor = UIColor(red: 192/255, green: 57/255, blue: 43/255, alpha: 1.0)
+        UINavigationBar.appearance().setBackgroundImage(nil, forBarMetrics: .Default)
+        
+        
         return true
+    }
+    
+    func handleQuickAction(shortcutItem: UIApplicationShortcutItem) -> Bool {
+        var quickActionHandled = false
+        let type = shortcutItem.type.componentsSeparatedByString(".").last!
+        if let shortcutType = Shortcut(rawValue: type) {
+            switch shortcutType {
+            case .aboutMe:
+                NSNotificationCenter.defaultCenter().addObserver(RAIntroductionViewController(), selector: #selector(RAIntroductionViewController.aboutMeTap), name: "about", object: nil)
+                NSNotificationCenter.defaultCenter().postNotificationName("about", object: self)
+                quickActionHandled = true
+            case .education:
+                NSNotificationCenter.defaultCenter().addObserver(RAIntroductionViewController(), selector: #selector(RAIntroductionViewController.educationTap), name: "education", object: nil)
+                NSNotificationCenter.defaultCenter().postNotificationName("education", object: self)
+                quickActionHandled = true
+            case .projects:
+                NSNotificationCenter.defaultCenter().addObserver(RAIntroductionViewController(), selector: #selector(RAIntroductionViewController.projectsTap), name: "projects", object: nil)
+                NSNotificationCenter.defaultCenter().postNotificationName("projects", object: self)
+                quickActionHandled = true
+            case .why:
+                NSNotificationCenter.defaultCenter().addObserver(RAIntroductionViewController(), selector: #selector(RAIntroductionViewController.whyPressed(_:)), name: "why", object: nil)
+                NSNotificationCenter.defaultCenter().postNotificationName("why", object: self)
+                quickActionHandled = true
+            }
+        }
+        
+        return quickActionHandled
+    }
+    
+    func application(application: UIApplication, performActionForShortcutItem shortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
+        completionHandler(handleQuickAction(shortcutItem))
+        
     }
 
     func applicationWillResignActive(application: UIApplication) {
@@ -40,7 +91,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
 
 }
 

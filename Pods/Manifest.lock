@@ -1,0 +1,34 @@
+PODS:
+  - Agrume (2.2.0)
+  - BubbleTransition (1.0.3)
+  - Cosmos (1.2.1)
+  - KDCircularProgress (1.3.3)
+  - MMScrollPresenter (0.0.4)
+  - PSPageControl (0.1.0):
+    - UIImageViewAlignedSwift
+  - RQShineLabel (0.1.3)
+  - Shimmer (1.0.2)
+  - UIImageViewAlignedSwift (0.1.10.1)
+
+DEPENDENCIES:
+  - Agrume
+  - BubbleTransition (~> 1.0.0)
+  - Cosmos (~> 1.2)
+  - KDCircularProgress
+  - MMScrollPresenter
+  - PSPageControl
+  - RQShineLabel
+  - Shimmer
+
+SPEC CHECKSUMS:
+  Agrume: 9809d02ad54b7f79371ad5ba22d5b00fb29f22fb
+  BubbleTransition: a7ae6678721406d60f604cbbea1ace505563119d
+  Cosmos: 27ddd077ef5859659a4bbbbd84137ae717f020e8
+  KDCircularProgress: 81dd822abc37d9fec7254f4295d0e2bd74733f79
+  MMScrollPresenter: 95a8af342c053b0d5ee88b2e16b07905f9646417
+  PSPageControl: e6eb19d85dec2decfb973079830968e26d49421d
+  RQShineLabel: ae66343d6c779a8efdf61241734ddcec5d79d351
+  Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
+  UIImageViewAlignedSwift: 3175ba809372103ad13787052e7d66a594b5836c
+
+COCOAPODS: 0.39.0

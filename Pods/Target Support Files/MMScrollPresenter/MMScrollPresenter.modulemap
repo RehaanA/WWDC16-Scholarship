@@ -1,0 +1,6 @@
+framework module MMScrollPresenter {
+  umbrella header "MMScrollPresenter-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -33,8 +33,48 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>About Me</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>Learn More Rehaan!</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>$(PRODUCT_BUNDLE_IDENTIFIER).AboutMe</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Education</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>View Rehaan&apos;s Education</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>$(PRODUCT_BUNDLE_IDENTIFIER).Education</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Projects</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>View Rehaan&apos;s Projects</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>$(PRODUCT_BUNDLE_IDENTIFIER).Projects</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>WWDC</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>Why WWDC?</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>$(PRODUCT_BUNDLE_IDENTIFIER).WhyWWDC</string>
+		</dict>
+	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>SF-UI-Display-Light.otf</string>
+		<string>SF-UI-Text-Light.otf</string>
+		<string>SF-UI-Text-Regular.otf</string>
+		<string>SF-UI-Display-Bold.otf</string>
 	</array>
 </dict>
 </plist>
